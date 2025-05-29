@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="theme-dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CONTROLADOR DE ARDUÍNO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+    <style>
+      body {
+        background-color: #111;
+        color: white;
+      }
+
+      .led-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .led-img {
+        width: 128px;
+        height: auto;
+        transition: transform 0.2s ease;
+      }
+
+      .led-img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container has-text-centered">
+        <h1 class="title">CONTROLADOR DE ARDUÍNO</h1>
+        <p class="subtitle">SELECIONE UMA DAS OPÇÕES ABAIXO:</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container has-text-centered">
+        <form action="/toggle" method="post">
+          <button type="submit" class="led-button">
+            <img src="{{ url_for('static', filename=image) }}" alt="LED" class="led-img" />
+          </button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
